@@ -1,0 +1,45 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.30501.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GoogleCardboard.Android", "GoogleCardboard.Android\GoogleCardboard.Android.csproj", "{C181332A-B7A9-491A-AB68-64AE8BF5C630}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CardboardMonkey", "CardboardMonkey\CardboardMonkey.csproj", "{6487EFD3-FC34-456D-99DB-65640725377F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|ARM = Debug|ARM
+		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
+		Release|ARM = Release|ARM
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C181332A-B7A9-491A-AB68-64AE8BF5C630}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C181332A-B7A9-491A-AB68-64AE8BF5C630}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C181332A-B7A9-491A-AB68-64AE8BF5C630}.Debug|ARM.ActiveCfg = Debug|Any CPU
+		{C181332A-B7A9-491A-AB68-64AE8BF5C630}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{C181332A-B7A9-491A-AB68-64AE8BF5C630}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C181332A-B7A9-491A-AB68-64AE8BF5C630}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C181332A-B7A9-491A-AB68-64AE8BF5C630}.Release|ARM.ActiveCfg = Release|Any CPU
+		{C181332A-B7A9-491A-AB68-64AE8BF5C630}.Release|x86.ActiveCfg = Release|Any CPU
+		{6487EFD3-FC34-456D-99DB-65640725377F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6487EFD3-FC34-456D-99DB-65640725377F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6487EFD3-FC34-456D-99DB-65640725377F}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{6487EFD3-FC34-456D-99DB-65640725377F}.Debug|ARM.ActiveCfg = Debug|Any CPU
+		{6487EFD3-FC34-456D-99DB-65640725377F}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{6487EFD3-FC34-456D-99DB-65640725377F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6487EFD3-FC34-456D-99DB-65640725377F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6487EFD3-FC34-456D-99DB-65640725377F}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{6487EFD3-FC34-456D-99DB-65640725377F}.Release|ARM.ActiveCfg = Release|Any CPU
+		{6487EFD3-FC34-456D-99DB-65640725377F}.Release|x86.ActiveCfg = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = GoogleCardboard.Android\GoogleCardboard.Android.csproj
+	EndGlobalSection
+EndGlobal

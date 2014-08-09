@@ -1,0 +1,15 @@
+﻿<Properties>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Android.MonoForAndroid_API_10" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="GoogleCardboard.Android\CardboardView.cs">
+    <Files>
+      <File FileName="GoogleCardboard.Android\CardboardActivity.cs" Line="1" Column="1" />
+      <File FileName="GoogleCardboard.Android\CardboardView.cs" Line="38" Column="38" />
+      <File FileName="GoogleCardboard.Android\sensors\HeadTracker.cs" Line="3" Column="3" />
+      <File FileName="GoogleCardboard.Android\CardboardDeviceParams.cs" Line="15" Column="15" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>

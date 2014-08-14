@@ -76,7 +76,7 @@ namespace WindowsFormsApplication
 		public void Draw(Camera camera, BasicEffect effect)
 		{
 			//effect.VertexColorEnabled = true;
-			//effect.View = camera.View;
+			//effect.ViewMatrix = camera.ViewMatrix;
 			//effect.Projection = camera.ProjectionMatrix;
 			//effect.World = Matrix.Identity;
 

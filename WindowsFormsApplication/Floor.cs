@@ -27,7 +27,7 @@ namespace WindowsFormsApplication
 
 		public void Draw(Camera camera, BasicEffect effect)
 		{
-			effect.View = camera.View;
+			effect.View = camera.ViewMatrix;
 			effect.Projection = camera.ProjectionMatrix;
 			effect.World = Matrix.Identity;
 			

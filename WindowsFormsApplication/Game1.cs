@@ -16,7 +16,7 @@ namespace WindowsFormsApplication
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
 
-	    private Camera camera;
+	    public Camera camera;
 	    private Floor floor;
 	    private BasicEffect effect;
 
@@ -32,6 +32,7 @@ namespace WindowsFormsApplication
 			//	pp.MultiSampleCount = 16;
 
 			//};
+			graphics.SupportedOrientations = /*DisplayOrientation.LandscapeLeft | DisplayOrientation.LandscapeRight | */DisplayOrientation.Portrait;// | DisplayOrientation.PortraitDown;
 
             Content.RootDirectory = "Content";
         }
@@ -46,7 +47,7 @@ namespace WindowsFormsApplication
         {
             // TODO: Add your initialization logic here
 
-			camera = new Camera(this, new Vector3(10f, 1f, 5f), Vector3.Zero, 5f);
+			camera = new Camera(this, new Vector3(10f, 0.5f, 5f), Vector3.Zero, 5f);
 			Components.Add(camera);
 			floor = new Floor(GraphicsDevice, 20, 20);
 			effect = new BasicEffect(GraphicsDevice);

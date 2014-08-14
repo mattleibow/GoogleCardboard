@@ -20,7 +20,14 @@ namespace WindowsFormsApplication
 
 		public Matrix ProjectionMatrix { get; protected set; }
 
-		public Matrix View
+		public Matrix AttitudeMatrix { get; set; }
+
+		public Matrix ViewMatrix
+		{
+			get { return Matrix.Identity * LookAtMatrix * AttitudeMatrix; }
+		}
+
+		private Matrix LookAtMatrix
 		{
 			get { return Matrix.CreateLookAt(Position, cameraLookAt, Vector3.Up); }
 		}
@@ -56,6 +63,7 @@ namespace WindowsFormsApplication
 				Game.GraphicsDevice.Viewport.AspectRatio,
 				0.05f,
 				1000.0f);
+			AttitudeMatrix = Matrix.Identity;
 
 			MoveTo(position, rotation);
 

@@ -91,21 +91,11 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="..\WindowsFormsApplication\Camera.cs">
-      <Link>Camera.cs</Link>
-    </Compile>
-    <Compile Include="..\WindowsFormsApplication\Cube.cs">
-      <Link>Cube.cs</Link>
-    </Compile>
-    <Compile Include="..\WindowsFormsApplication\Floor.cs">
-      <Link>Floor.cs</Link>
-    </Compile>
-    <Compile Include="..\WindowsFormsApplication\Game1.cs">
-      <Link>Game1.cs</Link>
-    </Compile>
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Cube.cs" />
+    <Compile Include="Floor.cs" />
     <Compile Include="GamePage.xaml.cs">
       <DependentUpon>GamePage.xaml</DependentUpon>
     </Compile>
@@ -114,6 +104,16 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>AppResources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="CardboardMonkeyGame.cs" />
+    <Compile Include="VirtualReality\EyeTransform.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="VirtualReality\HeadTransform.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="VirtualReality\VirtualRealityGame.cs">
+      <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -125,6 +125,13 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+    <None Include="Properties\AppManifest.xml" />
+    <None Include="Properties\WMAppManifest.xml">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Content Include="..\WindowsFormsApplication\Content\floor.xnb">
@@ -139,13 +146,6 @@
       <Link>Content\monkeyNormal.xnb</Link>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <None Include="packages.config" />
-    <None Include="Properties\AppManifest.xml" />
-    <None Include="Properties\WMAppManifest.xml">
-      <SubType>Designer</SubType>
-    </None>
-  </ItemGroup>
-  <ItemGroup>
     <Content Include="Assets\AlignmentGrid.png" />
     <Content Include="Assets\ApplicationIcon.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -173,9 +173,9 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\PhoneClassLibrary1\PhoneClassLibrary1.csproj">
-      <Project>{5F7AFB57-2845-4632-81EE-A43A0C748E52}</Project>
-      <Name>PhoneClassLibrary1</Name>
+    <ProjectReference Include="..\PhoneClassLibrary1\Microsoft.Xna.Framework.Sensors.Motion.csproj">
+      <Project>{5f7afb57-2845-4632-81ee-a43a0c748e52}</Project>
+      <Name>Microsoft.Xna.Framework.Sensors.Motion</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\$(TargetFrameworkIdentifier)\$(TargetFrameworkVersion)\Microsoft.$(TargetFrameworkIdentifier).$(TargetFrameworkVersion).Overrides.targets" />

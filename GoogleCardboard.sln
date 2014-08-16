@@ -11,7 +11,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowsFormsApplication", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PhoneApp1", "PhoneApp1\PhoneApp1.csproj", "{B9F59DCE-2EA0-4F20-9F5F-76401A1CABD4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PhoneClassLibrary1", "PhoneClassLibrary1\PhoneClassLibrary1.csproj", "{5F7AFB57-2845-4632-81EE-A43A0C748E52}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Microsoft.Xna.Framework.Sensors.Motion", "PhoneClassLibrary1\Microsoft.Xna.Framework.Sensors.Motion.csproj", "{5F7AFB57-2845-4632-81EE-A43A0C748E52}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

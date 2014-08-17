@@ -7,7 +7,6 @@ namespace PhoneApp1
 {
     public class CardboardMonkeyGame : VirtualRealityGame
     {
-	    private GraphicsDeviceManager graphics;
 	    private SpriteBatch spriteBatch;
 		private BasicEffect effect;
 
@@ -16,11 +15,9 @@ namespace PhoneApp1
 
 		public CardboardMonkeyGame()
         {
-            graphics = new GraphicsDeviceManager(this);
-	        graphics.PreferMultiSampling = true;
-			graphics.SupportedOrientations = DisplayOrientation.Portrait;
-
             Content.RootDirectory = "Content";
+
+			Graphics.SupportedOrientations = DisplayOrientation.LandscapeLeft;
         }
 
         protected override void Initialize()

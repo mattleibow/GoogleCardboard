@@ -4,14 +4,28 @@ namespace VirtualReality
 {
     public class VirtualRealityGame : Game
     {
+	    public GraphicsDeviceManager Graphics { get; private set; }
+
+	    public VirtualRealityGame()
+		{
+			Graphics = new GraphicsDeviceManager(this);
+			Graphics.PreferMultiSampling = true;
+			Graphics.SupportedOrientations =
+				DisplayOrientation.LandscapeLeft | DisplayOrientation.LandscapeRight |
+				DisplayOrientation.Portrait | DisplayOrientation.PortraitDown;
+
+	    }
+
+		public HeadTransform HeadTransform { get; private set; }
+
         protected override void Initialize()
         {
 			HeadTransform = new HeadTransform(GraphicsDevice.Viewport);
+	        HeadTransform.DisplayOrientation = Window.CurrentOrientation;
+	        Window.OrientationChanged += (sender, args) => HeadTransform.DisplayOrientation = Window.CurrentOrientation;
 			
             base.Initialize();
         }
-
-		public HeadTransform HeadTransform { get; private set; }
 
         protected override void Draw(GameTime gameTime)
         {

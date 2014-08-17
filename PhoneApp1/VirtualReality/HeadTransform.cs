@@ -1,4 +1,5 @@
-﻿using Microsoft.Xna.Framework;
+﻿using System;
+using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Sensors.Motion;
 
@@ -69,21 +70,44 @@ namespace VirtualReality
 			}
 		}
 
+		public DisplayOrientation DisplayOrientation { get; set; }
+
 		public Matrix Projection
 		{
-			get
-			{
-				return GetProjection(Viewport);
-			}
+			get { return GetProjection(Viewport); }
 		}
 
 		public Matrix GetProjection(Viewport projectionViewport)
 		{
-			return Matrix.CreatePerspectiveFieldOfView(
+			Matrix projection = Matrix.CreatePerspectiveFieldOfView(
 				MathHelper.PiOver4,
 				projectionViewport.AspectRatio,
 				0.05f,
 				1000.0f);
+
+			Matrix rotation = Matrix.Identity;
+			switch (DisplayOrientation)
+			{
+				case DisplayOrientation.LandscapeLeft:
+					rotation = Matrix.CreateRotationZ(MathHelper.PiOver2);
+					break;
+				case DisplayOrientation.LandscapeRight:
+					rotation = Matrix.CreateRotationZ(-MathHelper.PiOver2);
+					break;
+				case DisplayOrientation.Portrait:
+					rotation = Matrix.Identity;
+					break;
+				case DisplayOrientation.PortraitDown:
+					rotation = Matrix.CreateRotationZ(MathHelper.Pi);
+					break;
+				case DisplayOrientation.Default:
+				case DisplayOrientation.Unknown:
+				default:
+					rotation = Matrix.Identity;
+					break;
+			}
+
+			return rotation*projection;
 		}
 
 		public Matrix Rotation

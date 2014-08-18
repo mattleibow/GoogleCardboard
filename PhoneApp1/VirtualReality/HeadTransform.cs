@@ -11,11 +11,14 @@ namespace VirtualReality
 
 		private Viewport viewport;
 		private float interpupillaryDistance;
+		private DisplayOrientation displayOrientation;
+		private bool forceLandscape;
 
 		public HeadTransform(Viewport viewport)
 		{
 			LeftEyeTransform = new EyeTransform(this);
 			RightEyeTransform = new EyeTransform(this);
+			ForceLandscape = true;
 			Viewport = viewport; // this will update the eye viewports
 
 			InterpupillaryDistance = 0.06F;
@@ -58,19 +61,55 @@ namespace VirtualReality
 			set
 			{
 				viewport = value;
-
-				Viewport left = viewport;
-				Viewport right = viewport;
-				left.Width = left.Width/2;
-				right.Width = right.Width/2;
-				right.X = right.Width;
-
-				LeftEyeTransform.Viewport = left;
-				RightEyeTransform.Viewport = right;
+				UpdateViewport();
 			}
 		}
 
-		public DisplayOrientation DisplayOrientation { get; set; }
+		public DisplayOrientation DisplayOrientation
+		{
+			get { return displayOrientation; }
+			set
+			{
+				displayOrientation = value;
+				UpdateViewport();
+			}
+		}
+
+		public bool ForceLandscape
+		{
+			get { return forceLandscape; }
+			set
+			{
+				forceLandscape = value;
+				UpdateViewport();
+			}
+		}
+
+		private void UpdateViewport()
+		{
+			Viewport left = Viewport;
+			Viewport right = Viewport;
+
+			var isLandscape = 
+				DisplayOrientation == DisplayOrientation.LandscapeLeft || 
+				DisplayOrientation == DisplayOrientation.LandscapeRight;
+
+			if (ForceLandscape && !isLandscape)
+			{
+				left.Height = left.Height/2;
+				right.Height = right.Height/2;
+				right.Y = right.Height;
+			}
+			else
+			{
+				left.Width = left.Width/2;
+				right.Width = right.Width/2;
+				right.X = right.Width;
+			}
+
+			LeftEyeTransform.Viewport = left;
+			RightEyeTransform.Viewport = right;
+		}
 
 		public Matrix Projection
 		{

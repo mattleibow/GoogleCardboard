@@ -17,7 +17,7 @@ namespace PhoneApp1
         {
             Content.RootDirectory = "Content";
 
-			Graphics.SupportedOrientations = DisplayOrientation.LandscapeLeft;
+			Graphics.SupportedOrientations = DisplayOrientation.LandscapeLeft | DisplayOrientation.LandscapeRight;
         }
 
         protected override void Initialize()
